@@ -42,6 +42,8 @@ echo 'source ~/.zsh/powerlevel10k/powerlevel10k.zsh-theme' >> ~/.zshrc
 # Generate new ssh keys for github if needed
 ssh-keygen -t ed25519 -C "github $(hostname)" -N "" -f ~/.ssh/id_github
 echo 'eval "$(ssh-agent -s)" > /dev/null 2>&1; ssh-add ~/.ssh/id_github > /dev/null 2>&1' >> ~/.zshrc
+echo 'You can optionally upload the Github SSH public key. First pull it with:'
+echo 'scp $(whoami)@$(hostname):~/.ssh/id_github.pub ./'
 
 # Prompt
 while true; do
