@@ -39,6 +39,10 @@ echo 'source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh' >> ~/.z
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.zsh/powerlevel10k
 echo 'source ~/.zsh/powerlevel10k/powerlevel10k.zsh-theme' >> ~/.zshrc
 
+# Generate new ssh keys for github if needed
+ssh-keygen -t ed25519 -C "github $(hostname)" -N "" -f ~/.ssh/id_github
+echo 'eval "$(ssh-agent -s)" > /dev/null 2>&1; ssh-add ~/.ssh/id_github > /dev/null 2>&1' >> ~/.zshrc
+
 # Prompt
 while true; do
     read -p 'Script completed. Reload as zsh and configure powerlevel10k? [Y/n]' yn
