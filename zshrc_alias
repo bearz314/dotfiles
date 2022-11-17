@@ -1,3 +1,4 @@
 alias reload="source ~/.zshrc"
 alias edit="vim ~/.zshrc"
 alias ls="ls --color"
+function please { echo "sudo $(fc -ln -1)\n"; sudo "$SHELL" -c "$(fc -ln -1)"; }
